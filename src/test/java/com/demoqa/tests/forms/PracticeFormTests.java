@@ -1,4 +1,16 @@
-@BeforeMethod
+package com.demoqa.tests.forms;
+
+import com.demoqa.pages.FormsPage;
+import com.demoqa.pages.HomePage;
+import com.demoqa.pages.SidePanel;
+import com.demoqa.tests.TestBase;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+public class PracticeFormTest extends TestBase {
+
+    @BeforeMethod
     public void precondition() {
         new HomePage(driver).getForms();
         new SidePanel(driver).selectPracticeForm().hideIframes();
@@ -20,3 +32,4 @@
                .verifySuccessRegistration("Thanks for submitting the form")
                 ;
     }
+}
